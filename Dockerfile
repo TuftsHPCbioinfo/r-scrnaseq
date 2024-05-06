@@ -61,7 +61,7 @@ RUN Rscript -e "BiocManager::install('AnnotationDbi')" \
 RUN Rscript -e "devtools::install_version('Matrix')" \
     && Rscript -e "install.packages('SeuratObject')" \
     && Rscript -e "install.packages('Seurat')" \
-    && Rscript -e "install_github('satijalab/seurat-data')" \
+    && Rscript -e "devtools::install_github('satijalab/seurat-data')" \
     && Rscript -e "BiocManager::install('SingleR')" 
 
 
