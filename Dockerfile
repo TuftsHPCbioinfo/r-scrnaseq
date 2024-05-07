@@ -142,7 +142,7 @@ RUN Rscript -e "remotes::install_github('satijalab/seurat-wrappers')" \
 
 ## Install  monocle3
 RUN Rscript -e "BiocManager::install(c('BiocGenerics', 'DelayedArray', 'DelayedMatrixStats', \
-                       'limma', 'lme4', 'S4Vectors', 'batchelor', 'SingleCellExperiment', \
+                        'lme4', 'S4Vectors', 'batchelor', 'SingleCellExperiment', \
                        'SummarizedExperiment', 'HDF5Array', \
                        'terra', 'ggrastr'))" \
     && Rscript -e "devtools::install_github('cole-trapnell-lab/monocle3')"
