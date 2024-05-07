@@ -4,6 +4,12 @@ Run apt-get update &&  apt-get install -y vim && \
     echo session-timeout-minutes=0 >> /etc/rstudio/rsession.conf  && \
     echo session-save-action-default=no >> /etc/rstudio/rsession.conf 
 
+## SCHNAPPs
+RUN Rscript -e "devtools::install_github('nghiavtr/BPSC')" \
+    && Rscript -e "devtools::install_github('statOmics/zingeR')" \
+    && Rscript -e "devtools::install_github('bnprks/BPCells')" \
+    && Rscript -e "devtools::install_github('C3BI-pasteur-fr/UTechSCB-SCHNAPPs',dependencies = TRUE)"
+    
 ## Bioinformatics packages
 RUN Rscript -e "BiocManager::install('AnnotationDbi')" \
     && Rscript -e "BiocManager::install('batchelor')" \ 
@@ -169,10 +175,4 @@ RUN Rscript -e "install.packages('NMF')" \
     && Rscript -e "BiocManager::install('ComplexHeatmap')" \
     && Rscript -e "devtools::install_github('sqjin/CellChat')"
 
-## Dependencies for SCHNAPPs
-RUN Rscript -e 'devtools::install_github("nghiavtr/BPSC")' \
-    && Rscript -e 'devtools::install_github("statOmics/zingeR")' \
-    && Rscript -e 'devtools::install_github("bnprks/BPCells")'
 
-## SCHNAPPs
-RUN Rscript -e "devtools::install_github('C3BI-pasteur-fr/UTechSCB-SCHNAPPs',dependencies = TRUE)"
