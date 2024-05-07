@@ -3,15 +3,11 @@ FROM yzhangtufts/rserver:4.4.0
 Run apt-get update &&  apt-get install -y vim && \
     echo session-timeout-minutes=0 >> /etc/rstudio/rsession.conf  && \
     echo session-save-action-default=no >> /etc/rstudio/rsession.conf 
-
-## SCHNAPPs
-RUN Rscript -e "devtools::install_github('nghiavtr/BPSC')" \
-    && Rscript -e "devtools::install_github('statOmics/zingeR')" \
-    && Rscript -e "devtools::install_github('bnprks/BPCells')" \
-    && Rscript -e "devtools::install_github('C3BI-pasteur-fr/UTechSCB-SCHNAPPs',dependencies = TRUE)"
     
 ## Bioinformatics packages
 RUN Rscript -e "BiocManager::install('AnnotationDbi')" \
+    && Rscript -e "devtools::install_github('nghiavtr/BPSC')" \
+    && Rscript -e "devtools::install_github('bnprks/BPCells')" \
     && Rscript -e "BiocManager::install('batchelor')" \ 
     && Rscript -e "BiocManager::install('biomaRt')" \
     && Rscript -e "BiocManager::install('BSgenome')" \
@@ -57,11 +53,15 @@ RUN Rscript -e "BiocManager::install('AnnotationDbi')" \
     && Rscript -e "BiocManager::install(c('clusterProfiler'))" \
     && Rscript -e "BiocManager::install(c('ReactomePA'))" \
     && Rscript -e "BiocManager::install(c('DOSE'))" \
+    && Rscript -e "BiocManager::install('S4Arrays')" \
+    && Rscript -e "BiocManager::install('S4Vectors')" \
     && Rscript -e "install.packages('sctransform')" \
     && Rscript -e 'BiocManager::install("slingshot")' \
     && Rscript -e 'install.packages("scCustomize")' \
     && Rscript -e 'install.packages("janitor")' \
-    && Rscript -e 'BiocManager::install("hypeR")'
+    && Rscript -e 'BiocManager::install("hypeR")' \
+    && Rscript -e "devtools::install_github('statOmics/zingeR')" 
+
 
 ## Install Seurat5, seurat-wrappers and singleR
 RUN Rscript -e "devtools::install_version('Matrix')" \
