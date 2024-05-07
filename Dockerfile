@@ -33,6 +33,7 @@ RUN Rscript -e "BiocManager::install('AnnotationDbi')" \
     && Rscript -e "BiocManager::install('GSVA')" \
     && Rscript -e "BiocManager::install('impute')" \
     && Rscript -e "BiocManager::install('limma')" \
+    && Rscript -e "BiocManager::install('LoomExperiment)" \
     && Rscript -e "BiocManager::install('OmnipathR')" \ 
     && Rscript -e "BiocManager::install(c('org.Cf.eg.db', 'org.Sc.sgd.db', 'org.Hs.eg.db', 'org.Mm.eg.db', 'org.Rn.eg.db'))" \
     && Rscript -e "BiocManager::install('preprocessCore')" \
@@ -59,6 +60,7 @@ RUN Rscript -e "BiocManager::install('AnnotationDbi')" \
     && Rscript -e "install.packages('sctransform')" \
     && Rscript -e 'BiocManager::install("slingshot")' \
     && Rscript -e 'install.packages("scCustomize")' \
+    && Rscript -e "devtools::install_github('cellgeni/sceasy')" \
     && Rscript -e 'install.packages("janitor")' \
     && Rscript -e 'BiocManager::install("hypeR")' \
     && Rscript -e "devtools::install_github('statOmics/zingeR')" 
