@@ -12,6 +12,7 @@ RUN Rscript -e "BiocManager::install('AnnotationDbi')" \
     && Rscript -e "BiocManager::install('biomaRt')" \
     && Rscript -e "BiocManager::install('BSgenome')" \
     && Rscript -e "BiocManager::install('clustifyr')" \
+    && Rscript -e "BiocManager::install('CHETAH')" \
     && Rscript -e "BiocManager::install(c('clusterProfiler'))" \
     && Rscript -e "BiocManager::install(c('DelayedMatrixStats'))" \
     && Rscript -e "BiocManager::install(c('DelayedArray'))" \
