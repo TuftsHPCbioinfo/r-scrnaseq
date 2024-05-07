@@ -32,7 +32,7 @@ RUN Rscript -e "BiocManager::install('AnnotationDbi')" \
     && Rscript -e "BiocManager::install(c('escape'))" \
     && Rscript -e "BiocManager::install('GSVA')" \
     && Rscript -e "BiocManager::install('impute')" \
-    && Rscript -e "BiocManager::install('LoomExperiment)" \
+    && Rscript -e "BiocManager::install('LoomExperiment')" \
     && Rscript -e "BiocManager::install('OmnipathR')" \ 
     && Rscript -e "BiocManager::install(c('org.Cf.eg.db', 'org.Sc.sgd.db', 'org.Hs.eg.db', 'org.Mm.eg.db', 'org.Rn.eg.db'))" \
     && Rscript -e "BiocManager::install('preprocessCore')" \
