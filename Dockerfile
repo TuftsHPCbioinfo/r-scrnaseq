@@ -172,5 +172,6 @@ RUN Rscript -e "install.packages('NMF')" \
     && Rscript -e "devtools::install_github('jokergoo/circlize')" \
     && Rscript -e "BiocManager::install('ComplexHeatmap')" \
     && Rscript -e "devtools::install_github('sqjin/CellChat')"
-
-
+    
+## presto
+RUN Rscript -e "devtools::install_github('immunogenomics/presto')"
