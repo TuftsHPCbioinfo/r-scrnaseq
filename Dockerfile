@@ -4,6 +4,7 @@ FROM yzhangtufts/rserver:4.4.0
 RUN Rscript -e "BiocManager::install('AnnotationDbi')" \
     && Rscript -e "devtools::install_github('nghiavtr/BPSC')" \
     && Rscript -e "devtools::install_github('bnprks/BPCells')" \
+    && Rscript -e "BiocManager::install('apeglm')" \ 
     && Rscript -e "BiocManager::install('batchelor')" \ 
     && Rscript -e "BiocManager::install('biomaRt')" \
     && Rscript -e "BiocManager::install('BSgenome')" \
@@ -20,6 +21,7 @@ RUN Rscript -e "BiocManager::install('AnnotationDbi')" \
     && Rscript -e "BiocManager::install('EGSEA')" \
     && Rscript -e "BiocManager::install('EGSEAdata')" \
     && Rscript -e "BiocManager::install('enrichplot')" \
+    && Rscript -e "BiocManager::install('FlowSorted.Blood.EPIC')" \
     && Rscript -e "BiocManager::install(c('GEOquery'))" \
     && Rscript -e "BiocManager::install(c('GenomicRanges'))" \
     && Rscript -e "BiocManager::install('GO.db')" \
